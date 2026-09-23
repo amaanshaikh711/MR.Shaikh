@@ -27,8 +27,8 @@ export const TechUniverse: React.FC = () => {
   return (
     <section
       id="stack"
-      className={`relative w-full py-24 border-t transition-colors ${
-        isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
+      className={`relative w-full py-24 border-t transition-colors bg-transparent ${
+        isDark ? 'border-white/[0.06]' : 'border-zinc-200'
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">

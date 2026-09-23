@@ -82,17 +82,15 @@ export const ExperienceTimeline: React.FC = () => {
   }));
 
   return (
-    <ScrollReveal
+    <section
       id="experience"
-      className={`relative w-full py-24 border-t transition-colors ${
-        isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
+      className={`relative w-full py-24 border-t transition-colors bg-transparent ${
+        isDark ? 'border-white/[0.06]' : 'border-zinc-200'
       }`}
-      x={32}
-      duration={0.75}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         {/* Section Header */}
-        <div className="max-w-2xl mb-12">
+        <ScrollReveal className="max-w-2xl mb-12" y={20} x={0} duration={0.7}>
           <div
             className={`flex items-center gap-2 text-xs font-mono tracking-widest uppercase font-semibold ${
               isDark ? 'text-purple-400' : 'text-indigo-600'
@@ -116,7 +114,7 @@ export const ExperienceTimeline: React.FC = () => {
             Professional track record spanning full-stack development, applied machine learning pipelines,
             client real-estate platforms, and production Python engineering.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Timeline Flow */}
         <div
@@ -266,7 +264,7 @@ export const ExperienceTimeline: React.FC = () => {
           ))}
         </div>
       </div>
-    </ScrollReveal>
+    </section>
   );
 };
 

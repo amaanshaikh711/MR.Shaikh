@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ParticleText from '../react-bits/ParticleText';
+import GridScan from '../react-bits/GridScan';
 import { Sparkles, RefreshCw, Terminal } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -28,14 +29,31 @@ export const IdentityParticleSection: React.FC = () => {
           : 'border-zinc-200 bg-[#f4f4f0]'
       }`}
     >
-      {/* Subtle radial ambient backdrop */}
+      {/* GridScan — official React Bits WebGL background */}
       <div
-        className={`pointer-events-none absolute inset-0 ${
-          isDark
-            ? 'bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.06)_0%,transparent_70%)]'
-            : 'bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05)_0%,transparent_70%)]'
-        }`}
-      />
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+        }}
+      >
+        <GridScan
+          sensitivity={0.55}
+          lineThickness={1}
+          linesColor="#2F293A"
+          gridScale={0.1}
+          scanColor="#C179FE"
+          scanOpacity={0.4}
+          enablePost
+          bloomIntensity={0.6}
+          chromaticAberration={0.002}
+          noiseIntensity={0.01}
+          enableGyro={false}
+          scanOnClick={false}
+          lightMode={!isDark}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
         {/* Eyebrow and Interactive Hint */}

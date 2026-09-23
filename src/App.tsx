@@ -18,6 +18,7 @@ import ContactSection from './components/contact/ContactSection';
 import CustomCursor from './components/ui/CustomCursor';
 import Preloader from './components/ui/Preloader';
 import MagneticScrollToggle from './components/ui/MagneticScrollToggle';
+import DotField from './components/react-bits/DotField';
 import { Project } from './types/portfolio';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 
@@ -182,7 +183,18 @@ function PortfolioApp() {
       {/* Floating Pill Navigation */}
       <Navbar />
 
-      <main className="relative flex flex-col overflow-x-clip">
+      {/* Permanent atmospheric dot particles background layer */}
+      <DotField
+        accentColor="#C179FE"
+        dotRadius={1.5}
+        gap={36}
+        speed={0.4}
+        baseOpacity={0.14}
+        peakOpacity={0.75}
+        lightMode={!isDark}
+      />
+
+      <main className="relative z-10 flex flex-col overflow-x-clip">
         {/* Hero Section */}
         <Hero />
 

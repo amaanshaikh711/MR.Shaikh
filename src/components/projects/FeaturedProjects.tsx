@@ -47,16 +47,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
   };
 
   return (
-    <ScrollReveal
+    <section
       id="work"
-      className={`relative w-full py-24 transition-colors ${
-        isDark ? 'bg-[#060608]' : 'bg-[#f7f7f5]'
-      }`}
-      x={36}
-      duration={0.75}
+      className="relative w-full py-24 bg-transparent"
     >
       {/* Section Header */}
-      <div className="mx-auto max-w-6xl px-6 md:px-10 mb-12">
+      <ScrollReveal className="mx-auto max-w-6xl px-6 md:px-10 mb-12" y={20} x={0} duration={0.7}>
         <div
           className={`flex flex-col md:flex-row md:items-end justify-between gap-6 border-b pb-8 transition-colors ${
             isDark ? 'border-white/[0.08]' : 'border-zinc-200'
@@ -105,7 +101,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
             INTERACTIVE 3D & PRODUCTION PREVIEWS
           </span>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Featured Case Studies */}
       <div className="mx-auto max-w-6xl px-6 md:px-10 space-y-24">
@@ -423,7 +419,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
           );
         })}
       </div>
-    </ScrollReveal>
+    </section>
   );
 };
 

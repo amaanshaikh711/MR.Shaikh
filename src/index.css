@@ -17,6 +17,7 @@
     --text-muted: #71717a;
     --accent-primary: #6366f1;
     --accent-glow: rgba(99, 102, 241, 0.15);
+    --portfolio-primary: #C179FE;
   }
 
   .dark {
@@ -31,6 +32,7 @@
     --text-muted: #71717a;
     --accent-primary: #a855f7;
     --accent-glow: rgba(168, 85, 247, 0.25);
+    --portfolio-primary: #C179FE;
   }
 
   html {

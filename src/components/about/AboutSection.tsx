@@ -10,15 +10,13 @@ export const AboutSection: React.FC = () => {
   const isDark = theme === 'dark';
 
   return (
-    <ScrollReveal
+    <section
       id="about"
-      className={`relative w-full py-24 border-t transition-colors ${
-        isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
+      className={`relative w-full py-24 border-t transition-colors bg-transparent ${
+        isDark ? 'border-white/[0.06]' : 'border-zinc-200'
       }`}
-      x={32}
-      duration={0.75}
     >
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
+      <ScrollReveal className="mx-auto max-w-6xl px-6 md:px-10" y={20} x={0} duration={0.7}>
         {/* Section Header */}
         <div
           className={`flex items-center gap-2 text-xs font-mono tracking-widest uppercase mb-3 font-semibold ${
@@ -290,8 +288,8 @@ export const AboutSection: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
-    </ScrollReveal>
+      </ScrollReveal>
+    </section>
   );
 };
 

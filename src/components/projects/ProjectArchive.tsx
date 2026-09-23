@@ -33,17 +33,15 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
   };
 
   return (
-    <ScrollReveal
+    <section
       id="archive"
-      className={`relative w-full py-20 border-t transition-colors ${
-        isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
+      className={`relative w-full py-20 border-t transition-colors bg-transparent ${
+        isDark ? 'border-white/[0.06]' : 'border-zinc-200'
       }`}
-      x={32}
-      duration={0.75}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8">
+        <ScrollReveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8" y={20} x={0} duration={0.7}>
           <div>
             <div
               className={`flex items-center gap-2 text-xs font-mono tracking-widest uppercase font-semibold ${
@@ -86,7 +84,7 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
               </button>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Interactive Editorial Archive Table with Floating Cursor Preview */}
         <div
@@ -243,7 +241,7 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
           </a>
         </div>
       </div>
-    </ScrollReveal>
+    </section>
   );
 };
 

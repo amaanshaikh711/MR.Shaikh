@@ -21,7 +21,9 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden pt-28 pb-16 flex flex-col justify-between"
+      className={`relative min-h-screen w-full overflow-hidden pt-28 pb-16 flex flex-col justify-between transition-colors ${
+        isDark ? 'bg-[#060608]' : 'bg-[#f7f7f5]'
+      }`}
     >
       {/* React Bits Waves Hero Background with Active Cursor Physics */}
       <Waves

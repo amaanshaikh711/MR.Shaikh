@@ -10,9 +10,9 @@ export const PERSONAL_INFO = {
   location: 'Mumbai, India',
   email: 'amaanshaikh711@gmail.com',
   github: 'https://github.com/amaanshaikh711',
-  linkedin: 'https://linkedin.com/in/amaanshaikh711',
-  twitter: 'https://twitter.com/amaanshaikh711',
-  instagram: 'https://instagram.com/amaanshaikh711',
+  linkedin: 'https://www.linkedin.com/in/aman-shaikh-3b4959292/',
+  twitter: 'https://x.com/amanshaikh711',
+  instagram: 'https://www.instagram.com/_amaanshaikh711/',
   resume: 'https://github.com/amaanshaikh711/Aman-Portfolio',
   bio: [
     "I'm Aman, a developer from Mumbai building at the intersection of full-stack web and applied AI/ML. I design and ship smart, AI-powered web applications — from MERN dashboards and real-estate platforms to NLP tools, ML pipelines and operator-grade analytics surfaces.",

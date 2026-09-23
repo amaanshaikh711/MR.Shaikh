@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Copy, Check, Send, ArrowUpRight, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import GridScan from '../react-bits/GridScan';
 import { PERSONAL_INFO } from '../../data/portfolioData';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -40,12 +41,24 @@ export const ContactSection: React.FC = () => {
         isDark ? 'bg-[#060608] border-white/[0.08]' : 'bg-[#f7f7f5] border-zinc-200'
       }`}
     >
-      {/* Background ambient lighting */}
-      <div
-        className={`pointer-events-none absolute bottom-0 left-1/2 h-[450px] w-[650px] -translate-x-1/2 translate-y-1/3 rounded-full blur-[140px] ${
-          isDark ? 'bg-purple-600/10' : 'bg-indigo-300/15'
-        }`}
-      />
+      {/* GridScan — official React Bits WebGL background */}
+      <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+        <GridScan
+          sensitivity={0.55}
+          lineThickness={1}
+          linesColor="#2F293A"
+          gridScale={0.1}
+          scanColor="#C179FE"
+          scanOpacity={0.4}
+          enablePost
+          bloomIntensity={0.6}
+          chromaticAberration={0.002}
+          noiseIntensity={0.01}
+          enableGyro={false}
+          scanOnClick={false}
+          lightMode={!isDark}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
         {/* Editorial Heading Finale */}
