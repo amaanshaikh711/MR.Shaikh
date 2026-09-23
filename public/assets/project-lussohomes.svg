@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Dark Vignette & Atmospheric Gradients -->
+    <radialGradient id="luxGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#3d2f23" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#14110e" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#080706" stop-opacity="0.96"/>
+    </radialGradient>
+
+    <linearGradient id="goldButtonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4a359"/>
+      <stop offset="100%" stop-color="#b8843c"/>
+    </linearGradient>
+
+    <linearGradient id="goldTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c59b5f"/>
+      <stop offset="100%" stop-color="#e9c893"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="buttonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#c59b5f" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <style>
+    .font-serif { font-family: 'Playfair Display', 'Georgia', serif; }
+    .font-sans { font-family: 'Satoshi', 'Inter', -apple-system, sans-serif; }
+    .gold-accent { fill: #c59b5f; }
+  </style>
+
+  <!-- Background Luxury Architectural Interior Scene -->
+  <rect width="1920" height="1080" fill="#0c0a08"/>
+
+  <!-- Living Room Scene Vector Elements -->
+  <!-- Panoramic Window Panes to City -->
+  <g opacity="0.4">
+    <!-- Left tall floor-to-ceiling window -->
+    <rect x="0" y="0" width="360" height="1080" fill="#181e28"/>
+    <!-- City Skyline silhouettes in distant window -->
+    <path d="M40 700 L40 380 L80 380 L80 430 L120 430 L120 320 L160 320 L160 480 L200 480 L200 350 L240 350 L240 500 L280 500 L280 410 L340 410 L340 700 Z" fill="#0d141e" opacity="0.6"/>
+    <!-- Window mullions -->
+    <line x1="360" y1="0" x2="360" y2="1080" stroke="#2a241e" stroke-width="12"/>
+    <line x1="180" y1="0" x2="180" y2="1080" stroke="#1f1a15" stroke-width="4"/>
+    <line x1="0" y1="420" x2="360" y2="420" stroke="#1f1a15" stroke-width="6"/>
+  </g>
+
+  <!-- Right Window / Wall Panel -->
+  <g opacity="0.45">
+    <rect x="1560" y="0" width="360" height="1080" fill="#14110e"/>
+    <line x1="1560" y1="0" x2="1560" y2="1080" stroke="#2a241e" stroke-width="12"/>
+    <!-- Large architectural artwork frame on right wall -->
+    <rect x="1600" y="220" width="300" height="520" rx="4" fill="#201b16" stroke="#42372c" stroke-width="4"/>
+    <path d="M1650 350 Q1750 280 1850 380 T1800 620" stroke="#685542" stroke-width="8" fill="none" opacity="0.4"/>
+  </g>
+
+  <!-- Central Interior Room: Dark wood slats & Cove Lighting -->
+  <g opacity="0.7">
+    <!-- Ceiling Wood Panels -->
+    <rect x="360" y="0" width="1200" height="240" fill="#1c1611"/>
+    <!-- Ceiling Coffer / Tray ceiling warm lighting -->
+    <rect x="420" y="40" width="1080" height="140" fill="#2a2016" stroke="#523e27" stroke-width="2"/>
+    <line x1="420" y1="180" x2="1500" y2="180" stroke="#e0ad67" stroke-width="3" opacity="0.7"/>
+
+    <!-- Architectural Back Wall -->
+    <rect x="360" y="240" width="1200" height="840" fill="#16120e"/>
+    <!-- Large abstract wall art over sofa -->
+    <rect x="710" y="280" width="500" height="300" rx="6" fill="#241d17" stroke="#3b2f24" stroke-width="2"/>
+    <path d="M740 480 Q860 330 960 440 T1180 370" stroke="#d4a359" stroke-width="4" fill="none" opacity="0.35"/>
+    <circle cx="950" cy="400" r="60" fill="#c59b5f" opacity="0.12"/>
+  </g>
+
+  <!-- Luxury Furniture Silhouettes -->
+  <g opacity="0.75">
+    <!-- Floor reflection (polished dark marble) -->
+    <rect x="0" y="760" width="1920" height="320" fill="#110e0b"/>
+    <ellipse cx="960" cy="980" rx="800" ry="100" fill="#1e1812" opacity="0.6"/>
+
+    <!-- Left Accent Armchair -->
+    <path d="M220 740 C220 620 260 580 340 580 C400 580 430 630 430 740 Z" fill="#302720" stroke="#483b30" stroke-width="2"/>
+    <!-- Left Designer Side Table with Lamp -->
+    <rect x="440" y="600" width="70" height="160" rx="6" fill="#1f1a14"/>
+    <polygon points="450,560 500,560 515,600 435,600" fill="#ded7cd" opacity="0.85"/>
+    <circle cx="475" cy="580" r="18" fill="#ffe0a3" opacity="0.7" filter="url(#softShadow)"/>
+
+    <!-- Central Bespoke Luxury Sofa in Warm Velvet -->
+    <path d="M600 680 C600 580 660 560 840 560 L1080 560 C1260 560 1320 580 1320 680 L1340 760 L580 760 Z" fill="#3c3126" stroke="#544535" stroke-width="2"/>
+    <!-- Plush Cushions -->
+    <rect x="680" y="590" width="160" height="120" rx="16" fill="#4a3d30" stroke="#5c4c3b" stroke-width="1.5"/>
+    <rect x="880" y="590" width="160" height="120" rx="16" fill="#45382b" stroke="#5c4c3b" stroke-width="1.5"/>
+    <rect x="1080" y="590" width="160" height="120" rx="16" fill="#4a3d30" stroke="#5c4c3b" stroke-width="1.5"/>
+
+    <!-- Right Side Designer Chair & Plant -->
+    <path d="M1500 740 C1500 620 1460 580 1380 580 C1320 580 1290 630 1290 740 Z" fill="#302720" stroke="#483b30" stroke-width="2"/>
+    <!-- Indoor Fiddle-leaf Fig Plant foliage -->
+    <ellipse cx="1490" cy="460" rx="40" ry="70" fill="#1c2618" opacity="0.8"/>
+    <ellipse cx="1520" cy="520" rx="55" ry="45" fill="#22301c" opacity="0.8"/>
+    <ellipse cx="1450" cy="510" rx="50" ry="40" fill="#182414" opacity="0.8"/>
+
+    <!-- Sleek Marble Coffee Table in center foreground -->
+    <polygon points="760,780 1160,780 1220,840 700,840" fill="#26201a" stroke="#4a3d32" stroke-width="2"/>
+    <rect x="1100" y="740" width="100" height="90" rx="28" fill="#2d241c" stroke="#423528" stroke-width="2"/>
+  </g>
+
+  <!-- Global Dark Cinematic Vignette Overlay -->
+  <rect width="1920" height="1080" fill="url(#luxGlow)"/>
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <g id="header">
+    <!-- Top Bar Background with subtle blur simulation -->
+    <rect x="0" y="0" width="1920" height="110" fill="#000000" fill-opacity="0.3"/>
+
+    <!-- Left: LUSSO HOME Logo Badge (Square cream card) -->
+    <g transform="translate(68, 22)">
+      <rect width="92" height="66" rx="8" fill="#fcfbf9" filter="url(#softShadow)"/>
+      <!-- Roof icon & Typography -->
+      <path d="M34 26 L46 16 L58 26 M40 23 L46 18 L52 23" stroke="#221e1a" stroke-width="1.8" fill="none"/>
+      <text x="46" y="39" class="font-serif" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle" fill="#1a1815">LUSSO</text>
+      <text x="46" y="49" class="font-sans" font-size="6.5" font-weight="600" letter-spacing="3.5" text-anchor="middle" fill="#665c52">HOME</text>
+    </g>
+
+    <!-- Center Navigation Links -->
+    <g class="font-sans" font-size="16" font-weight="500" text-anchor="middle">
+      <!-- Active 'Home' Link -->
+      <text x="668" y="60" fill="#e0b26b" font-weight="600">Home</text>
+      <rect x="636" y="80" width="64" height="2.5" rx="1.25" fill="#e0b26b"/>
+
+      <text x="772" y="60" fill="#d2cbbe">Shop</text>
+      <text x="930" y="60" fill="#d2cbbe">Interior Designs</text>
+      <text x="1090" y="60" fill="#d2cbbe">About</text>
+      <text x="1215" y="60" fill="#d2cbbe">Contact</text>
+    </g>
+
+    <!-- Right: Wishlist Heart & Cart with Badges -->
+    <g transform="translate(1730, 42)">
+      <!-- Heart Wishlist Icon -->
+      <path d="M22 10 C22 4, 14 2, 10 7 C6 2, -2 4, -2 10 C-2 18, 10 24, 10 24 C10 24, 22 18, 22 10 Z" stroke="#e3ded5" stroke-width="2" fill="none"/>
+      <!-- Badge '1' -->
+      <circle cx="24" cy="4" r="10" fill="#c59b5f"/>
+      <text x="24" y="8" class="font-sans" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+
+      <!-- Cart Icon -->
+      <g transform="translate(60, 0)">
+        <path d="M0 2 L6 2 L12 18 L28 18 L32 6 L9 6" stroke="#e3ded5" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+        <circle cx="14" cy="22" r="2.5" fill="#e3ded5"/>
+        <circle cx="26" cy="22" r="2.5" fill="#e3ded5"/>
+        <!-- Badge '4' -->
+        <circle cx="30" cy="2" r="10" fill="#c59b5f"/>
+        <text x="30" y="6" class="font-sans" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff">4</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= HERO CONTENT ================= -->
+  <g id="hero-center" text-anchor="middle">
+    <!-- Eyebrow Tag with Gold Divider Lines -->
+    <g transform="translate(960, 175)">
+      <!-- Left line -->
+      <line x1="-390" y1="0" x2="-220" y2="0" stroke="#7e6749" stroke-width="1.2" opacity="0.7"/>
+      <!-- Pin & Text -->
+      <text x="-195" y="4" font-size="15">📍</text>
+      <text x="0" y="5" class="font-sans" font-size="14" font-weight="700" letter-spacing="4.5" fill="#e8c792">
+        FURNITURE STORE COMING SOON IN MUMBAI
+      </text>
+      <!-- Right line -->
+      <line x1="220" y1="0" x2="390" y2="0" stroke="#7e6749" stroke-width="1.2" opacity="0.7"/>
+    </g>
+
+    <!-- Main Editorial Headline (Serif typography) -->
+    <g class="font-serif" fill="#ffffff">
+      <text x="960" y="280" font-size="88" font-weight="700" letter-spacing="-1">
+        Luxury Interiors &amp;
+      </text>
+      <text x="960" y="375" font-size="88" font-weight="700" letter-spacing="-1">
+        Bespoke Furniture,
+      </text>
+      <text x="960" y="470" font-size="88" font-weight="700" letter-spacing="-1">
+        Designed for You
+      </text>
+    </g>
+
+    <!-- Subtitle -->
+    <text x="960" y="535" class="font-sans" font-size="20" font-weight="400" fill="#ded7cc" opacity="0.9" letter-spacing="0.2">
+      From concept to completion, we create refined interiors and custom
+    </text>
+    <text x="960" y="565" class="font-sans" font-size="20" font-weight="400" fill="#ded7cc" opacity="0.9" letter-spacing="0.2">
+      luxury furniture that reflect your lifestyle.
+    </text>
+
+    <!-- CTA BUTTONS -->
+    <g transform="translate(960, 610)">
+      <!-- Left CTA: 'Get Free Consultation' -->
+      <g transform="translate(-230, 0)">
+        <rect width="235" height="66" rx="14" fill="#35312d" fill-opacity="0.88" stroke="#685f55" stroke-width="1.5" filter="url(#softShadow)"/>
+        <text x="117" y="39" class="font-sans" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">
+          Get Free
+        </text>
+        <text x="117" y="55" class="font-sans" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">
+          Consultation
+        </text>
+      </g>
+
+      <!-- Right CTA: 'Shop Now' (Gold gradient button) -->
+      <g transform="translate(18, 0)">
+        <rect width="225" height="66" rx="14" fill="url(#goldButtonGrad)" filter="url(#buttonGlow)"/>
+        <text x="112" y="40" class="font-sans" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">
+          Shop Now
+        </text>
+      </g>
+    </g>
+
+    <!-- ================= FLOATING GLASS RATING PILL ================= -->
+    <g transform="translate(670, 790)" text-anchor="start">
+      <!-- Frosted capsule background -->
+      <rect width="540" height="130" rx="24" fill="#1b1713" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.2" filter="url(#softShadow)"/>
+
+      <!-- 5 Gold Stars & 4.9 Google Rating -->
+      <g transform="translate(75, 42)">
+        <!-- 5 Stars -->
+        <g fill="#f5b82e">
+          <polygon points="10,1 12,6 18,7 13,11 15,17 10,13 5,17 7,11 2,7 8,6"/>
+          <polygon points="34,1 36,6 42,7 37,11 39,17 34,13 29,17 31,11 26,7 32,6"/>
+          <polygon points="58,1 60,6 66,7 61,11 63,17 58,13 53,17 55,11 50,7 56,6"/>
+          <polygon points="82,1 84,6 90,7 85,11 87,17 82,13 77,17 79,11 74,7 80,6"/>
+          <polygon points="106,1 108,6 114,7 109,11 111,17 106,13 101,17 103,11 98,7 104,6"/>
+        </g>
+        <text x="145" y="15" class="font-sans" font-size="18" font-weight="800" fill="#ffffff">4.9</text>
+        <text x="185" y="15" class="font-sans" font-size="15" font-weight="500" fill="#c4bcb1">Google Rating</text>
+      </g>
+
+      <!-- Thin Horizontal Divider -->
+      <line x1="50" y1="72" x2="490" y2="72" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+
+      <!-- Avatars & 500+ Happy Clients -->
+      <g transform="translate(105, 96)">
+        <!-- Avatar 1: A -->
+        <circle cx="16" cy="6" r="17" fill="#8c6a47" stroke="#1b1713" stroke-width="2"/>
+        <text x="16" y="11" class="font-sans" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">A</text>
+
+        <!-- Avatar 2: J -->
+        <circle cx="44" cy="6" r="17" fill="#6d5843" stroke="#1b1713" stroke-width="2"/>
+        <text x="44" y="11" class="font-sans" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">J</text>
+
+        <!-- Avatar 3: S -->
+        <circle cx="72" cy="6" r="17" fill="#9e7b54" stroke="#1b1713" stroke-width="2"/>
+        <text x="72" y="11" class="font-sans" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">S</text>
+
+        <!-- Avatar 4: R -->
+        <circle cx="100" cy="6" r="17" fill="#755a3f" stroke="#1b1713" stroke-width="2"/>
+        <text x="100" y="11" class="font-sans" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">R</text>
+
+        <text x="140" y="11" class="font-sans" font-size="15" font-weight="700" fill="#ffffff">
+          500+ Happy Clients
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= FLOATING ACTION BUTTONS (BOTTOM RIGHT) ================= -->
+  <!-- Blue Phone Call Button -->
+  <g transform="translate(1820, 850)" filter="url(#softShadow)">
+    <circle cx="28" cy="28" r="30" fill="#0066cc"/>
+    <!-- Phone handset icon -->
+    <path d="M22 17 C22 17, 24 21, 26 21 C27 21, 28 20, 30 22 C32 24, 31 25, 31 26 C31 28, 28 32, 23 32 C17 32, 14 26, 14 20 C14 16, 17 14, 18 14 C19 14, 20 15, 21 17 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Green WhatsApp Button -->
+  <g transform="translate(1820, 930)" filter="url(#softShadow)">
+    <circle cx="28" cy="28" r="30" fill="#25d366"/>
+    <!-- WhatsApp chat bubble icon -->
+    <path d="M28 14 C20 14, 14 20, 14 28 C14 31, 15 34, 17 36 L15 42 L21 40 C23 41, 26 42, 28 42 C36 42, 42 36, 42 28 C42 20, 36 14, 28 14 Z" fill="#ffffff"/>
+    <path d="M24 21 C23.5 21, 22.5 21.5, 22 22.5 C21.5 23.5, 20 25.5, 20.5 28 C21 30.5, 23 32.5, 24.5 33.5 C26 34.5, 29 36, 32 35 C34 34.5, 35 33, 35.5 32 C36 31, 35 30.5, 34 30 L32 29 C31.5 28.5, 31 28.5, 30.5 29.5 L29.5 30.5 C29 31, 28.5 31, 28 30.5 C26.5 29.5, 25.5 28.5, 24.5 27 C24 26.5, 24.5 26, 25 25.5 L26 24.5 C26.5 24, 26.5 23.5, 26 23 L24.5 21.5 C24.2 21.2, 24.1 21, 24 21 Z" fill="#25d366"/>
+  </g>
+</svg>

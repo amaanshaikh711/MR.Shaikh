@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Dot pattern for neo-brutalist tech background -->
+    <pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#cbd5e1" opacity="0.65" />
+    </pattern>
+    <filter id="hard-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#000000" flood-opacity="1" />
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="#000000" flood-opacity="1" />
+    </filter>
+  </defs>
+
+  <!-- Background with subtle dot matrix -->
+  <rect width="1920" height="1080" fill="#f8fafc" />
+  <rect width="1920" height="1080" fill="url(#dot-grid)" />
+
+  <!-- TOP NAVIGATION BAR -->
+  <g transform="translate(60, 24)" filter="url(#hard-shadow)">
+    <rect width="1800" height="96" rx="20" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    
+    <!-- Brand Logo -->
+    <g transform="translate(36, 26)">
+      <!-- Shield Icon -->
+      <path d="M16 4 L30 10 L30 24 C30 34 22 42 16 46 C10 42 2 34 2 24 L2 10 Z" fill="none" stroke="#000000" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M10 24 L14 28 L22 18" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Text -->
+      <text x="44" y="32" font-family="'Satoshi', sans-serif" font-weight="900" font-size="28" fill="#000000" letter-spacing="-0.5">TrustLock</text>
+      <!-- AI Pill -->
+      <rect x="180" y="10" width="48" height="26" rx="13" fill="#f3e8ff" stroke="#a855f7" stroke-width="1.5"/>
+      <text x="189" y="27" font-family="'Satoshi', sans-serif" font-weight="800" font-size="13" fill="#7e22ce">✦ AI</text>
+    </g>
+
+    <!-- Nav Items -->
+    <!-- Client Dashboard (Active) -->
+    <g transform="translate(320, 24)">
+      <rect width="210" height="48" rx="24" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+      <!-- Layers icon -->
+      <path d="M22 18 L32 23 L22 28 L12 23 Z" fill="none" stroke="#2563eb" stroke-width="2"/>
+      <path d="M12 28 L22 33 L32 28" fill="none" stroke="#2563eb" stroke-width="2"/>
+      <text x="44" y="30" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#1d4ed8" letter-spacing="0.5">CLIENT DASHBOARD</text>
+    </g>
+
+    <!-- Agreements Vault -->
+    <g transform="translate(560, 24)">
+      <text x="32" y="30" font-family="'Satoshi', sans-serif" font-weight="700" font-size="14" fill="#334155" letter-spacing="0.5">AGREEMENTS VAULT</text>
+    </g>
+
+    <!-- Proof Verifier -->
+    <g transform="translate(800, 24)">
+      <text x="32" y="30" font-family="'Satoshi', sans-serif" font-weight="700" font-size="14" fill="#334155" letter-spacing="0.5">PROOF VERIFIER</text>
+    </g>
+
+    <!-- Dispute Assistant -->
+    <g transform="translate(1040, 24)">
+      <text x="32" y="30" font-family="'Satoshi', sans-serif" font-weight="700" font-size="14" fill="#334155" letter-spacing="0.5">DISPUTE ASSISTANT</text>
+    </g>
+
+    <!-- Right Controls -->
+    <!-- + New Escrow Button -->
+    <g transform="translate(1480, 24)">
+      <rect width="180" height="48" rx="24" fill="#7c3aed" stroke="#000000" stroke-width="2.5"/>
+      <text x="36" y="29" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#ffffff" letter-spacing="0.5">+ NEW ESCROW</text>
+    </g>
+    <!-- User Icon Button -->
+    <g transform="translate(1690, 24)">
+      <rect width="48" height="48" rx="24" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+      <circle cx="24" cy="18" r="7" fill="none" stroke="#000000" stroke-width="2.5"/>
+      <path d="M12 36 C12 28 36 28 36 36" fill="none" stroke="#000000" stroke-width="2.5"/>
+    </g>
+  </g>
+
+  <!-- CLIENT OVERVIEW HERO CARD -->
+  <g transform="translate(60, 150)" filter="url(#hard-shadow)">
+    <rect width="1800" height="210" rx="24" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    
+    <!-- User Avatar Icon Box -->
+    <g transform="translate(36, 42)">
+      <rect width="90" height="90" rx="20" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+      <circle cx="45" cy="38" r="14" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+      <path d="M22 72 C22 56 68 56 68 72" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+    </g>
+
+    <g transform="translate(150, 48)">
+      <!-- Pills -->
+      <rect x="0" y="0" width="180" height="32" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+      <text x="18" y="20" font-family="'Satoshi', sans-serif" font-weight="800" font-size="12" fill="#1d4ed8" letter-spacing="0.5">CLIENT DASHBOARD</text>
+      
+      <text x="200" y="21" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" fill="#64748b">ID: Client-001</text>
+
+      <!-- Company Title -->
+      <text x="0" y="80" font-family="'Satoshi', sans-serif" font-weight="900" font-size="44" fill="#000000" letter-spacing="-1">Apex Capital Partners</text>
+
+      <!-- Stellar Wallet Info -->
+      <text x="0" y="118" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="#64748b">Stellar Wallet: <tspan fill="#0f172a" font-weight="700">GBCX7W32KL98PQR1VBNM9WKLQ</tspan></text>
+    </g>
+
+    <!-- Action Buttons -->
+    <g transform="translate(1320, 68)">
+      <rect width="210" height="54" rx="14" fill="#7c3aed" stroke="#000000" stroke-width="3"/>
+      <text x="32" y="34" font-family="'Satoshi', sans-serif" font-weight="800" font-size="15" fill="#ffffff" letter-spacing="0.5">+ CREATE ESCROW</text>
+    </g>
+    <g transform="translate(1550, 68)">
+      <rect width="160" height="54" rx="14" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+      <path d="M26 27 L40 27 M34 21 L40 27 L34 33" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="50" y="34" font-family="'Satoshi', sans-serif" font-weight="800" font-size="15" fill="#000000" letter-spacing="0.5">SIGN OUT</text>
+    </g>
+  </g>
+
+  <!-- 4 STAT METRIC CARDS -->
+  <!-- Card 1: TOTAL VAULT DEPOSITED -->
+  <g transform="translate(60, 390)" filter="url(#card-shadow)">
+    <rect width="425" height="210" rx="20" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    <text x="32" y="48" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#334155" letter-spacing="0.5">TOTAL VAULT DEPOSITED</text>
+    <!-- Lock icon -->
+    <path d="M375 42 L375 34 C375 28 367 28 367 34 L367 42 M361 42 L381 42 L381 54 L361 54 Z" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="32" y="118" font-family="'Satoshi', sans-serif" font-weight="900" font-size="48" fill="#1d4ed8" letter-spacing="-1">$37,000 <tspan font-size="20" font-weight="700" fill="#475569">USDC</tspan></text>
+    <text x="32" y="160" font-family="'Satoshi', sans-serif" font-weight="600" font-size="15" fill="#475569">2 Active Smart Escrows</text>
+  </g>
+
+  <!-- Card 2: PENDING APPROVALS -->
+  <g transform="translate(515, 390)" filter="url(#card-shadow)">
+    <rect width="425" height="210" rx="20" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    <text x="32" y="48" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#334155" letter-spacing="0.5">PENDING APPROVALS</text>
+    <!-- Clock icon -->
+    <circle cx="370" cy="40" r="10" fill="none" stroke="#d97706" stroke-width="2.5"/>
+    <path d="M370 34 L370 40 L374 42" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="32" y="118" font-family="'Satoshi', sans-serif" font-weight="900" font-size="48" fill="#d97706" letter-spacing="-1">$31,000 <tspan font-size="20" font-weight="700" fill="#475569">USDC</tspan></text>
+    <text x="32" y="160" font-family="'Satoshi', sans-serif" font-weight="700" font-size="15" fill="#b45309">Awaiting AI Work Audit</text>
+  </g>
+
+  <!-- Card 3: CLIENT TRUST SCORE -->
+  <g transform="translate(970, 390)" filter="url(#card-shadow)">
+    <rect width="425" height="210" rx="20" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    <text x="32" y="48" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#334155" letter-spacing="0.5">CLIENT TRUST SCORE</text>
+    <!-- Shield icon -->
+    <path d="M365 32 L375 36 L375 46 C375 52 370 56 365 58 C360 56 355 52 355 46 L355 36 Z" fill="none" stroke="#059669" stroke-width="2.5"/>
+    <text x="32" y="118" font-family="'Satoshi', sans-serif" font-weight="900" font-size="48" fill="#059669" letter-spacing="-1">95 / 100</text>
+    <text x="32" y="160" font-family="'Satoshi', sans-serif" font-weight="700" font-size="15" fill="#047857">100% Escrow Funding Compliance</text>
+  </g>
+
+  <!-- Card 4: PERMISSIONS -->
+  <g transform="translate(1425, 390)" filter="url(#card-shadow)">
+    <rect width="435" height="210" rx="20" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    <text x="32" y="48" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#334155" letter-spacing="0.5">PERMISSIONS</text>
+    <!-- Badge icon -->
+    <path d="M375 32 L385 32 L385 52 L380 47 L375 52 Z" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+    <text x="32" y="108" font-family="'Satoshi', sans-serif" font-weight="900" font-size="28" fill="#7c3aed" letter-spacing="-0.5">Full Deposit &amp; Release</text>
+    <text x="32" y="160" font-family="'Satoshi', sans-serif" font-weight="600" font-size="15" fill="#475569">Can Create &amp; Authorize</text>
+  </g>
+
+  <!-- SECTION TITLE: YOUR CLIENT ESCROWS -->
+  <g transform="translate(60, 640)">
+    <!-- Document Icon -->
+    <rect x="0" y="2" width="36" height="42" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+    <line x1="8" y1="14" x2="28" y2="14" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="8" y1="22" x2="28" y2="22" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="8" y1="30" x2="20" y2="30" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+
+    <text x="50" y="32" font-family="'Satoshi', sans-serif" font-weight="900" font-size="36" fill="#000000" letter-spacing="-0.5">Your Client Escrows</text>
+
+    <!-- 2 ACTIVE Pill -->
+    <g transform="translate(1650, 4)">
+      <rect width="140" height="38" rx="19" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+      <text x="24" y="24" font-family="'Satoshi', sans-serif" font-weight="900" font-size="14" fill="#000000" letter-spacing="1">2 ACTIVE</text>
+    </g>
+  </g>
+
+  <!-- ESCROW CARD 1 -->
+  <g transform="translate(60, 715)" filter="url(#hard-shadow)">
+    <rect width="1800" height="230" rx="24" fill="#ffffff" stroke="#000000" stroke-width="3" />
+    
+    <g transform="translate(48, 44)">
+      <!-- Tags -->
+      <rect x="0" y="0" width="160" height="30" rx="15" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+      <text x="16" y="19" font-family="'Satoshi', sans-serif" font-weight="800" font-size="12" fill="#1d4ed8" letter-spacing="0.5">SOFTWARE &amp; TECH</text>
+
+      <text x="180" y="20" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" fill="#64748b">ID: ag-sw-101</text>
+
+      <!-- Escrow Title -->
+      <text x="0" y="74" font-family="'Satoshi', sans-serif" font-weight="900" font-size="34" fill="#000000" letter-spacing="-0.5">FinTech Mobile App &amp; Stellar Payments Integration</text>
+
+      <!-- Subtitle -->
+      <text x="0" y="112" font-family="'Satoshi', sans-serif" font-weight="700" font-size="17" fill="#475569">Client: <tspan fill="#000000">Apex Capital Partners</tspan> | Provider: <tspan fill="#000000">CyberPulse Dev Studio</tspan></text>
+    </g>
+
+    <!-- Right Side Total Vault & Action -->
+    <g transform="translate(1380, 52)">
+      <text x="140" y="20" font-family="'Satoshi', sans-serif" font-weight="800" font-size="13" fill="#64748b" text-anchor="end" letter-spacing="0.5">TOTAL VAULT</text>
+      <text x="240" y="70" font-family="'Satoshi', sans-serif" font-weight="900" font-size="44" fill="#1d4ed8" text-anchor="end" letter-spacing="-1">12,000 <tspan font-size="20" font-weight="700" fill="#475569">USDC</tspan></text>
+
+      <g transform="translate(70, 95)">
+        <rect width="180" height="46" rx="12" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+        <text x="28" y="28" font-family="'Satoshi', sans-serif" font-weight="900" font-size="14" fill="#000000" letter-spacing="0.5">VAULT VIEW ➔</text>
+      </g>
+    </g>
+  </g>
+</svg>

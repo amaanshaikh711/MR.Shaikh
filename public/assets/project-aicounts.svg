@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Card shadow -->
+    <filter id="ai-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04" />
+    </filter>
+    <!-- Linear gradient for operating cash trend area chart -->
+    <linearGradient id="cash-area-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.01" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1920" height="1080" fill="#f8fafc" />
+
+  <!-- ================= LEFT SIDEBAR (Width: 340px) ================= -->
+  <g id="sidebar">
+    <rect width="340" height="1080" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+
+    <!-- Logo / Brand -->
+    <g transform="translate(28, 30)">
+      <!-- AIC Logo Mark -->
+      <rect width="36" height="36" rx="8" fill="#0f172a" />
+      <text x="7" y="24" font-family="'Satoshi', sans-serif" font-weight="900" font-size="16" fill="#ffffff">AIC</text>
+      <text x="48" y="25" font-family="'Satoshi', sans-serif" font-weight="800" font-size="20" fill="#0f172a" letter-spacing="-0.5">AICounts</text>
+      <!-- Collapse arrow -->
+      <path d="M260 18 L254 24 L260 30" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Active Tenant Card -->
+    <g transform="translate(24, 96)">
+      <rect width="292" height="74" rx="10" fill="#f8fafc" stroke="#f1f5f9" stroke-width="1"/>
+      <circle cx="16" cy="22" r="4" fill="#10b981" />
+      <text x="28" y="25" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#64748b" letter-spacing="1">ACTIVE TENANT</text>
+      <text x="16" y="46" font-family="'Satoshi', sans-serif" font-weight="800" font-size="14" fill="#0f172a">GIGA NEXUS TECHNOLOGY</text>
+      <text x="16" y="63" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748b">FY 2026–27</text>
+    </g>
+
+    <!-- WORKSPACE Nav Items -->
+    <g transform="translate(24, 204)">
+      <text x="8" y="0" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#94a3b8" letter-spacing="1">WORKSPACE</text>
+      
+      <!-- Dashboard (Active) -->
+      <rect x="0" y="14" width="292" height="42" rx="8" fill="#f1f5f9" />
+      <rect x="14" y="26" width="16" height="16" rx="3" fill="#0f172a"/>
+      <text x="42" y="40" font-family="'Satoshi', sans-serif" font-weight="700" font-size="14" fill="#0f172a">Dashboard</text>
+
+      <!-- Transactions -->
+      <text x="42" y="86" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Transactions</text>
+
+      <!-- Sales -->
+      <text x="42" y="130" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Sales</text>
+
+      <!-- Purchases -->
+      <text x="42" y="174" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Purchases</text>
+
+      <!-- Expenses -->
+      <text x="42" y="218" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Expenses</text>
+
+      <!-- Banking -->
+      <text x="42" y="262" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Banking</text>
+    </g>
+
+    <!-- CONTACTS Nav Items -->
+    <g transform="translate(24, 508)">
+      <text x="8" y="0" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#94a3b8" letter-spacing="1">CONTACTS</text>
+      <text x="42" y="32" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Customers</text>
+      <text x="42" y="74" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Vendors</text>
+      <text x="42" y="116" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Catalog &amp; Ledgers</text>
+    </g>
+
+    <!-- COMPLIANCE Nav Items -->
+    <g transform="translate(24, 668)">
+      <text x="8" y="0" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#94a3b8" letter-spacing="1">COMPLIANCE</text>
+      <text x="42" y="32" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">GST</text>
+      <rect x="230" y="18" width="50" height="20" rx="4" fill="#f1f5f9"/>
+      <text x="238" y="32" font-family="'Satoshi', sans-serif" font-weight="800" font-size="10" fill="#64748b">INDIA</text>
+      <text x="42" y="74" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">Reports</text>
+    </g>
+
+    <!-- INTELLIGENCE Nav Items -->
+    <g transform="translate(24, 788)">
+      <text x="8" y="0" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#94a3b8" letter-spacing="1">INTELLIGENCE</text>
+      <text x="42" y="32" font-family="'Satoshi', sans-serif" font-weight="600" font-size="14" fill="#475569">AI Assistant</text>
+    </g>
+
+    <!-- User Profile Footer -->
+    <g transform="translate(24, 980)">
+      <line x1="-24" y1="-20" x2="316" y2="-20" stroke="#f1f5f9" stroke-width="1"/>
+      <rect width="42" height="42" rx="8" fill="#0f172a" />
+      <text x="14" y="28" font-family="'Satoshi', sans-serif" font-weight="800" font-size="20" fill="#ffffff">a</text>
+      <text x="56" y="20" font-family="'Satoshi', sans-serif" font-weight="800" font-size="15" fill="#0f172a">amanshaikh</text>
+      <text x="56" y="36" font-family="'Satoshi', sans-serif" font-weight="700" font-size="12" fill="#94a3b8" letter-spacing="1">OWNER</text>
+    </g>
+  </g>
+
+  <!-- ================= MAIN HEADER BAR ================= -->
+  <g id="main-header" transform="translate(340, 0)">
+    <rect width="1580" height="74" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Tenant Switcher Dropdown -->
+    <g transform="translate(36, 18)">
+      <rect width="260" height="38" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="16" y="24" font-family="'Satoshi', sans-serif" font-weight="800" font-size="13" fill="#0f172a">GIGA NEXUS TECHNOLOGY</text>
+      <path d="M225 21 L230 26 L235 21" fill="none" stroke="#64748b" stroke-width="2"/>
+    </g>
+
+    <text x="320" y="42" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="#64748b">FY 2026–27</text>
+
+    <!-- Search Input -->
+    <g transform="translate(860, 18)">
+      <rect width="400" height="38" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="20" y="24" font-family="'Satoshi', sans-serif" font-size="13" fill="#94a3b8">Search records...</text>
+    </g>
+
+    <!-- Right Icons: Notification bell + Avatar -->
+    <g transform="translate(1420, 24)">
+      <!-- Bell -->
+      <path d="M12 6 C12 3 16 3 16 6 L16 16 L10 20 L18 20 M14 20 L14 24" fill="none" stroke="#64748b" stroke-width="2"/>
+      <circle cx="20" cy="8" r="3" fill="#ef4444" />
+      
+      <!-- User Avatar -->
+      <circle cx="80" cy="14" r="18" fill="#0f172a" />
+      <text x="74" y="20" font-family="'Satoshi', sans-serif" font-weight="800" font-size="16" fill="#ffffff">A</text>
+    </g>
+  </g>
+
+  <!-- ================= DASHBOARD OVERVIEW CONTENT ================= -->
+  <g id="main-content" transform="translate(380, 110)">
+    <!-- Section Title & Action Buttons Row -->
+    <text x="0" y="32" font-family="'Satoshi', sans-serif" font-weight="900" font-size="34" fill="#0f172a" letter-spacing="-0.5">Overview</text>
+    <text x="0" y="60" font-family="'Satoshi', sans-serif" font-weight="600" font-size="15" fill="#64748b">Wednesday, 23 September 2026 • FY 2026–27</text>
+
+    <!-- Action Buttons -->
+    <g transform="translate(820, 14)">
+      <!-- + GENERATE INVOICE -->
+      <rect x="0" y="0" width="220" height="48" rx="8" fill="#0f172a" />
+      <text x="24" y="30" font-family="'Satoshi', sans-serif" font-weight="800" font-size="13" fill="#ffffff" letter-spacing="0.5">+ GENERATE INVOICE</text>
+
+      <!-- CREATE EXPENSE -->
+      <rect x="236" y="0" width="190" height="48" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="260" y="30" font-family="'Satoshi', sans-serif" font-weight="700" font-size="13" fill="#0f172a">⊟ CREATE EXPENSE</text>
+
+      <!-- SCAN BILL (OCR) -->
+      <rect x="442" y="0" width="190" height="48" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="466" y="30" font-family="'Satoshi', sans-serif" font-weight="700" font-size="13" fill="#0f172a">⛶ SCAN BILL (OCR)</text>
+    </g>
+
+    <!-- 4 STAT METRIC CARDS -->
+    <!-- Card 1: TOTAL REVENUE (YTD) -->
+    <g transform="translate(0, 96)" filter="url(#ai-shadow)">
+      <rect width="345" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="24" y="36" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#64748b" letter-spacing="1">TOTAL REVENUE (YTD)</text>
+      <text x="24" y="84" font-family="'Satoshi', sans-serif" font-weight="900" font-size="34" fill="#0f172a" letter-spacing="-1">₹23,57,930.28</text>
+      <text x="24" y="118" font-family="'Satoshi', sans-serif" font-weight="700" font-size="12" fill="#64748b">↗ 4 INVOICES ISSUED</text>
+    </g>
+
+    <!-- Card 2: OPERATING EXPENSES -->
+    <g transform="translate(370, 96)" filter="url(#ai-shadow)">
+      <rect width="345" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="24" y="36" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#64748b" letter-spacing="1">OPERATING EXPENSES</text>
+      <text x="24" y="84" font-family="'Satoshi', sans-serif" font-weight="900" font-size="34" fill="#0f172a" letter-spacing="-1">₹22,999.99</text>
+      <text x="24" y="118" font-family="'Satoshi', sans-serif" font-weight="700" font-size="11" fill="#64748b">RENT &amp; FACILITIES LEADS AT ₹14,999.99</text>
+    </g>
+
+    <!-- Card 3: ACCOUNTS RECEIVABLE -->
+    <g transform="translate(740, 96)" filter="url(#ai-shadow)">
+      <rect width="345" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="24" y="36" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#64748b" letter-spacing="1">ACCOUNTS RECEIVABLE</text>
+      <text x="24" y="84" font-family="'Satoshi', sans-serif" font-weight="900" font-size="34" fill="#2563eb" letter-spacing="-1">₹0</text>
+      <text x="24" y="118" font-family="'Satoshi', sans-serif" font-weight="700" font-size="12" fill="#ea580c">0 INVOICES PENDING</text>
+    </g>
+
+    <!-- Card 4: NET POSITION -->
+    <g transform="translate(1110, 96)" filter="url(#ai-shadow)">
+      <rect width="370" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="24" y="36" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#64748b" letter-spacing="1">NET POSITION</text>
+      <text x="24" y="84" font-family="'Satoshi', sans-serif" font-weight="900" font-size="34" fill="#059669" letter-spacing="-1">₹23,34,930.29</text>
+      <text x="24" y="118" font-family="'Satoshi', sans-serif" font-weight="700" font-size="12" fill="#059669">↗ 3 ACTIVE CUSTOMERS</text>
+    </g>
+
+    <!-- CHARTS ROW -->
+    <!-- Chart 1: OPERATING CASH TREND (Width: 960px) -->
+    <g transform="translate(0, 276)" filter="url(#ai-shadow)">
+      <rect width="960" height="460" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      
+      <!-- Title -->
+      <text x="32" y="44" font-family="'Satoshi', sans-serif" font-weight="900" font-size="18" fill="#0f172a">📈 OPERATING CASH TREND</text>
+      <text x="32" y="68" font-family="'Satoshi', sans-serif" font-weight="500" font-size="13" fill="#64748b">Invoiced revenue vs recorded expenses</text>
+
+      <!-- Monthly / Quarterly Pills -->
+      <g transform="translate(760, 28)">
+        <rect width="160" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+        <rect x="2" y="2" width="76" height="30" rx="5" fill="#ffffff"/>
+        <text x="18" y="22" font-family="'Satoshi', sans-serif" font-weight="700" font-size="12" fill="#0f172a">Monthly</text>
+        <text x="94" y="22" font-family="'Satoshi', sans-serif" font-weight="600" font-size="12" fill="#94a3b8">Quarterly</text>
+      </g>
+
+      <!-- Chart Grid & Axis Labels -->
+      <g transform="translate(60, 100)">
+        <!-- Y-Axis Gridlines & Labels -->
+        <text x="0" y="20" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">₹22.0L</text>
+        <line x1="60" y1="16" x2="840" y2="16" stroke="#f1f5f9" stroke-width="1" />
+
+        <text x="0" y="80" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">₹16.5L</text>
+        <line x1="60" y1="76" x2="840" y2="76" stroke="#f1f5f9" stroke-width="1" />
+
+        <text x="0" y="140" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">₹11.0L</text>
+        <line x1="60" y1="136" x2="840" y2="136" stroke="#f1f5f9" stroke-width="1" />
+
+        <text x="0" y="200" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">₹5.5L</text>
+        <line x1="60" y1="196" x2="840" y2="196" stroke="#f1f5f9" stroke-width="1" />
+
+        <text x="0" y="260" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">₹0.0L</text>
+        <line x1="60" y1="256" x2="840" y2="256" stroke="#e2e8f0" stroke-width="1.5" />
+
+        <!-- Area Curve -->
+        <path d="M70 20 Q 300 210, 780 252 L 780 256 L 70 256 Z" fill="url(#cash-area-gradient)"/>
+        <!-- Line Curve -->
+        <path d="M70 20 Q 300 210, 780 252" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- X-Axis Labels -->
+        <text x="70" y="284" font-family="'Satoshi', sans-serif" font-weight="600" font-size="13" fill="#64748b">Jul 26</text>
+        <text x="420" y="284" font-family="'Satoshi', sans-serif" font-weight="600" font-size="13" fill="#64748b">Aug 26</text>
+        <text x="750" y="284" font-family="'Satoshi', sans-serif" font-weight="700" font-size="13" fill="#0f172a">Sept 26</text>
+
+        <!-- Tooltip Card at Sept 26 -->
+        <g transform="translate(520, 60)" filter="url(#ai-shadow)">
+          <rect width="250" height="120" rx="8" fill="#0f172a" />
+          <text x="20" y="32" font-family="'Satoshi', sans-serif" font-weight="900" font-size="14" fill="#ffffff">Sept 26</text>
+          <circle cx="24" cy="62" r="5" fill="#38bdf8"/>
+          <text x="38" y="66" font-family="'Satoshi', sans-serif" font-size="13" fill="#cbd5e1">Invoiced:</text>
+          <text x="220" y="66" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="end">₹0</text>
+          
+          <circle cx="24" cy="94" r="5" fill="#a855f7"/>
+          <text x="38" y="98" font-family="'Satoshi', sans-serif" font-size="13" fill="#cbd5e1">Expenses:</text>
+          <text x="220" y="98" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="end">₹22,999.99</text>
+        </g>
+      </g>
+
+      <!-- Bottom Legend -->
+      <g transform="translate(360, 420)">
+        <circle cx="0" cy="0" r="5" fill="#94a3b8" />
+        <text x="12" y="4" font-family="'Satoshi', sans-serif" font-weight="600" font-size="13" fill="#475569">Expenses</text>
+        <circle cx="100" cy="0" r="5" fill="#0f172a" />
+        <text x="112" y="4" font-family="'Satoshi', sans-serif" font-weight="600" font-size="13" fill="#0f172a">Invoiced</text>
+      </g>
+    </g>
+
+    <!-- Chart 2: EXPENSE BREAKDOWN DONUT (Width: 500px) -->
+    <g transform="translate(980, 276)" filter="url(#ai-shadow)">
+      <rect width="500" height="460" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      
+      <!-- Title -->
+      <text x="32" y="44" font-family="'Satoshi', sans-serif" font-weight="900" font-size="18" fill="#0f172a">⏱ EXPENSE BREAKDOWN</text>
+      <text x="32" y="68" font-family="'Satoshi', sans-serif" font-weight="500" font-size="13" fill="#64748b">By real expense categories (2026–27)</text>
+
+      <!-- Donut Chart -->
+      <g transform="translate(250, 210)">
+        <!-- Donut Ring: 65% Rent & Facilities, 35% Internet & Software -->
+        <!-- Background circle -->
+        <circle cx="0" cy="0" r="90" fill="none" stroke="#e2e8f0" stroke-width="32" />
+        <!-- Segment 1: Rent & Facilities (navy #1e293b) -->
+        <circle cx="0" cy="0" r="90" fill="none" stroke="#0f172a" stroke-width="32"
+          stroke-dasharray="370 565" stroke-dashoffset="0" stroke-linecap="round"/>
+        <!-- Segment 2: Internet & Software (slate #475569) -->
+        <circle cx="0" cy="0" r="90" fill="none" stroke="#334155" stroke-width="32"
+          stroke-dasharray="195 565" stroke-dashoffset="-370" stroke-linecap="round"/>
+
+        <!-- Center Text -->
+        <text x="0" y="-8" font-family="'Satoshi', sans-serif" font-weight="800" font-size="11" fill="#94a3b8" text-anchor="middle" letter-spacing="1">TOTAL</text>
+        <text x="0" y="18" font-family="'Satoshi', sans-serif" font-weight="900" font-size="20" fill="#0f172a" text-anchor="middle">₹22,999.99</text>
+      </g>
+
+      <!-- Legend List below chart -->
+      <g transform="translate(48, 370)">
+        <!-- Item 1 -->
+        <circle cx="10" cy="0" r="6" fill="#0f172a"/>
+        <text x="28" y="4" font-family="'Satoshi', sans-serif" font-weight="700" font-size="14" fill="#1e293b">Rent &amp; Facilities</text>
+        <text x="400" y="4" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14" fill="#0f172a" text-anchor="end">₹14,999.99</text>
+
+        <!-- Item 2 -->
+        <circle cx="10" cy="36" r="6" fill="#334155"/>
+        <text x="28" y="40" font-family="'Satoshi', sans-serif" font-weight="700" font-size="14" fill="#1e293b">Internet &amp; Software</text>
+        <text x="400" y="40" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14" fill="#0f172a" text-anchor="end">₹8,000</text>
+      </g>
+    </g>
+  </g>
+</svg>
