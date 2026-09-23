@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Moon, Sun, Search, Menu } from 'lucide-react';
+import { Moon, Sun, Search, Menu } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import CommandPalette from '../ui/CommandPalette';
 import MobileSheet from '../ui/MobileSheet';
@@ -55,9 +55,22 @@ export const Navbar: React.FC = () => {
     { id: 'about', label: 'About', href: '#about' },
     { id: 'projects', label: 'Projects', href: '#work' },
     { id: 'experience', label: 'Experience', href: '#experience' },
-    { id: 'achievements', label: 'Achievements 🏆', href: '#achievements' },
+    { id: 'achievements', label: 'Achievements', href: '#achievements' },
     { id: 'reach', label: 'Reach', href: '#contact' },
   ] as const;
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const lenis = (window as any).__lenis;
+      if (lenis) {
+        lenis.scrollTo(href, { offset: -20, duration: 1.2 });
+      } else {
+        const target = document.querySelector(href);
+        target?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <>
@@ -70,15 +83,14 @@ export const Navbar: React.FC = () => {
               : 'border-zinc-300/80 bg-[#fdfdfc]/90 text-zinc-900 shadow-zinc-300/30 hover:border-zinc-400'
           }`}
         >
-          {/* Home Icon */}
+          {/* Logo */}
           <a
             href="#hero"
-            className={`p-1.5 rounded-full flex items-center justify-center transition-colors group ${
-              isDark ? 'text-zinc-300 hover:text-white' : 'text-zinc-600 hover:text-zinc-950'
-            }`}
+            onClick={(e) => handleNavClick(e, '#hero')}
+            className="p-0.5 rounded-full flex items-center justify-center transition-all group"
             aria-label="Scroll to top / home"
           >
-            <Home className="h-4 w-4 transition-transform group-hover:scale-110" />
+            <img src="/as-logo.png" alt="AS" className="h-7 w-7 sm:h-8 sm:w-8 rounded-full object-cover border border-purple-500/30 transition-transform group-hover:scale-110 shadow-sm" />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -89,6 +101,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={item.id}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`text-xs lg:text-sm transition-colors duration-200 whitespace-nowrap ${
                     isActive
                       ? isDark

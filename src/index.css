@@ -34,14 +34,35 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
   }
 
   body {
     font-family: var(--font-sans);
     background-color: var(--bg-main);
     color: var(--text-primary);
-    overflow-x: hidden;
+    overflow-x: clip;
     transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -124,3 +145,22 @@
   background: rgba(99, 102, 241, 0.2);
   color: #18181b;
 }
+
+/* Custom Desktop Cursor Replacement (Fine Pointer Devices Only) */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active [role="button"],
+  html.custom-cursor-active input,
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active select,
+  html.custom-cursor-active label,
+  html.custom-cursor-active summary,
+  html.custom-cursor-active .cursor-pointer,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+

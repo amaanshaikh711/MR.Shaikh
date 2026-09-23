@@ -3,6 +3,7 @@ import { ArrowUpRight, FolderGit2 } from 'lucide-react';
 import { ARCHIVE_PROJECTS } from '../../data/portfolioData';
 import { Project } from '../../types/portfolio';
 import { useTheme } from '../../context/ThemeContext';
+import ScrollReveal from '../ui/ScrollReveal';
 
 interface ProjectArchiveProps {
   onSelectProject: (project: Project) => void;
@@ -32,10 +33,13 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
   };
 
   return (
-    <section
+    <ScrollReveal
+      id="archive"
       className={`relative w-full py-20 border-t transition-colors ${
         isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
       }`}
+      x={32}
+      duration={0.75}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         {/* Section Header */}
@@ -131,14 +135,18 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
           )}
 
           <div className={`divide-y ${isDark ? 'divide-white/[0.06]' : 'divide-zinc-200'}`}>
-            {filteredProjects.map((project) => (
-              <div
+            {filteredProjects.map((project, index) => (
+              <ScrollReveal
                 key={project.id}
+                data-cursor="project"
                 onMouseEnter={() => setHoveredProject(project)}
                 onClick={() => onSelectProject(project)}
                 className={`group flex flex-col md:flex-row md:items-center justify-between py-6 px-4 -mx-4 rounded-xl transition-colors duration-200 cursor-pointer ${
                   isDark ? 'hover:bg-white/[0.03]' : 'hover:bg-zinc-100/70'
                 }`}
+                x={20}
+                duration={0.55}
+                delay={index * 0.04}
               >
                 {/* Year + Title */}
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 md:w-5/12">
@@ -201,7 +209,7 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
                     <ArrowUpRight className="h-4 w-4" />
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -235,7 +243,7 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({ onSelectProject 
           </a>
         </div>
       </div>
-    </section>
+    </ScrollReveal>
   );
 };
 

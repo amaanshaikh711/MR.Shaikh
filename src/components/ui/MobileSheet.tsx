@@ -24,15 +24,20 @@ export const MobileSheet: React.FC<MobileSheetProps> = ({
     { id: 'about', label: 'About', href: '#about' },
     { id: 'work', label: 'Projects', href: '#work' },
     { id: 'experience', label: 'Experience', href: '#experience' },
-    { id: 'achievements', label: 'Achievements 🏆', href: '#achievements' },
+    { id: 'achievements', label: 'Achievements', href: '#achievements' },
     { id: 'contact', label: 'Reach', href: '#contact' },
   ];
 
   const handleLinkClick = (href: string) => {
     onClose();
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.scrollTo(href, { offset: -20, duration: 1.2 });
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -55,9 +60,12 @@ export const MobileSheet: React.FC<MobileSheetProps> = ({
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10 dark:border-white/10">
-            <div>
-              <p className="font-display font-bold text-lg">{PERSONAL_INFO.name}</p>
-              <p className="font-mono text-xs text-zinc-400">Software Developer</p>
+            <div className="flex items-center gap-3">
+              <img src="/as-logo.png" alt="AS" className="h-10 w-10 rounded-xl object-cover border border-purple-500/30 shadow-md" />
+              <div>
+                <p className="font-display font-bold text-base leading-tight">{PERSONAL_INFO.name}</p>
+                <p className="font-mono text-xs text-zinc-400">Software Developer</p>
+              </div>
             </div>
             <button
               onClick={onClose}

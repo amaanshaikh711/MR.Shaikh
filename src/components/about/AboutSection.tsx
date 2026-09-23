@@ -2,17 +2,21 @@ import React from 'react';
 import { Trophy, GraduationCap, Github, ArrowUpRight, Compass } from 'lucide-react';
 import { PERSONAL_INFO, ACHIEVEMENTS, EDUCATION } from '../../data/portfolioData';
 import { useTheme } from '../../context/ThemeContext';
+import avatarImage from '../../assets/images/aman_profile_avatar.jpg';
+import ScrollReveal from '../ui/ScrollReveal';
 
 export const AboutSection: React.FC = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
   return (
-    <section
+    <ScrollReveal
       id="about"
       className={`relative w-full py-24 border-t transition-colors ${
         isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
       }`}
+      x={32}
+      duration={0.75}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         {/* Section Header */}
@@ -119,7 +123,7 @@ export const AboutSection: React.FC = () => {
               >
                 <div className="w-full h-full rounded-full overflow-hidden bg-black/40">
                   <img
-                    src="/assets/aman-profile.png"
+                    src={avatarImage}
                     alt="Aman Shaikh Profile Avatar"
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
@@ -287,7 +291,7 @@ export const AboutSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </ScrollReveal>
   );
 };
 

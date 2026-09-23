@@ -98,7 +98,7 @@ interface WavePoint {
   cursor: { x: number; y: number; vx: number; vy: number };
 }
 
-export interface WavesProps {
+interface WavesProps {
   lineColor?: string;
   backgroundColor?: string;
   waveSpeedX?: number;
@@ -110,43 +110,39 @@ export interface WavesProps {
   friction?: number;
   tension?: number;
   maxCursorMove?: number;
-  style?: React.CSSProperties;
-  className?: string;
 }
 
 export const Waves: React.FC<WavesProps> = ({
-  lineColor = 'black',
+  lineColor = 'rgba(255, 255, 255, 0.25)',
   backgroundColor = 'transparent',
   waveSpeedX = 0.0125,
   waveSpeedY = 0.005,
   waveAmpX = 32,
   waveAmpY = 16,
-  xGap = 10,
-  yGap = 32,
-  friction = 0.925,
-  tension = 0.005,
+  xGap = 14,
+  yGap = 36,
+  friction = 0.92,
+  tension = 0.008,
   maxCursorMove = 100,
-  style = {},
-  className = '',
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const boundingRef = useRef({ width: 0, height: 0, left: 0, top: 0 });
-  const noiseRef = useRef(new Noise(Math.random()));
   const linesRef = useRef<WavePoint[][]>([]);
   const mouseRef = useRef({
-    x: -10,
-    y: 0,
-    lx: 0,
-    ly: 0,
-    sx: 0,
-    sy: 0,
+    x: -1000,
+    y: -1000,
+    lx: -1000,
+    ly: -1000,
+    sx: -1000,
+    sy: -1000,
     v: 0,
     vs: 0,
     a: 0,
     set: false,
   });
+  const noiseRef = useRef(new Noise(Math.random()));
   const configRef = useRef({
     lineColor,
     waveSpeedX,
@@ -182,11 +178,20 @@ export const Waves: React.FC<WavesProps> = ({
     if (!canvas || !container) return;
     ctxRef.current = canvas.getContext('2d');
 
+    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+    let isVisible = false;
+
     function setSize() {
       if (!container || !canvas) return;
-      boundingRef.current = container.getBoundingClientRect();
-      canvas.width = boundingRef.current.width;
-      canvas.height = boundingRef.current.height;
+      const rect = container.getBoundingClientRect();
+      boundingRef.current = {
+        width: rect.width,
+        height: rect.height,
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY,
+      };
+      canvas.width = rect.width;
+      canvas.height = rect.height;
     }
 
     function setLines() {
@@ -194,7 +199,9 @@ export const Waves: React.FC<WavesProps> = ({
       linesRef.current = [];
       const oWidth = width + 200;
       const oHeight = height + 30;
-      const { xGap: currentXGap, yGap: currentYGap } = configRef.current;
+      // On mobile devices, increase spacing to reduce points and CPU load by 50%
+      const currentXGap = isMobile ? configRef.current.xGap * 1.5 : configRef.current.xGap;
+      const currentYGap = isMobile ? configRef.current.yGap * 1.3 : configRef.current.yGap;
       const totalLines = Math.ceil(oWidth / currentXGap);
       const totalPoints = Math.ceil(oHeight / currentYGap);
       const xStart = (width - currentXGap * totalLines) / 2;
@@ -288,6 +295,11 @@ export const Waves: React.FC<WavesProps> = ({
     }
 
     function tick(t: number) {
+      if (!isVisible) {
+        frameIdRef.current = null;
+        return;
+      }
+
       const mouse = mouseRef.current;
       mouse.sx += (mouse.x - mouse.sx) * 0.1;
       mouse.sy += (mouse.y - mouse.sy) * 0.1;
@@ -300,10 +312,6 @@ export const Waves: React.FC<WavesProps> = ({
       mouse.lx = mouse.x;
       mouse.ly = mouse.y;
       mouse.a = Math.atan2(dy, dx);
-      if (container) {
-        container.style.setProperty('--x', `${mouse.sx}px`);
-        container.style.setProperty('--y', `${mouse.sy}px`);
-      }
 
       movePoints(t);
       drawLines();
@@ -316,11 +324,11 @@ export const Waves: React.FC<WavesProps> = ({
     }
 
     function updateMouse(clientX: number, clientY: number) {
+      if (!isVisible) return;
       const mouse = mouseRef.current;
-      if (!container) return;
-      const b = container.getBoundingClientRect();
-      mouse.x = clientX - b.left;
-      mouse.y = clientY - b.top;
+      // Use cached bounds without calling getBoundingClientRect on mouse move!
+      mouse.x = clientX - (boundingRef.current.left - window.scrollX);
+      mouse.y = clientY - (boundingRef.current.top - window.scrollY);
       if (!mouse.set) {
         mouse.sx = mouse.x;
         mouse.sy = mouse.y;
@@ -341,13 +349,35 @@ export const Waves: React.FC<WavesProps> = ({
 
     setSize();
     setLines();
-    frameIdRef.current = requestAnimationFrame(tick);
 
-    window.addEventListener('resize', onResize);
+    // IntersectionObserver: Pause Waves physics rendering when Hero is scrolled out of view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        isVisible = entry?.isIntersecting ?? false;
+        if (isVisible) {
+          setSize();
+          if (frameIdRef.current === null) {
+            frameIdRef.current = requestAnimationFrame(tick);
+          }
+        } else {
+          if (frameIdRef.current !== null) {
+            cancelAnimationFrame(frameIdRef.current);
+            frameIdRef.current = null;
+          }
+        }
+      },
+      { rootMargin: '100px' }
+    );
+
+    observer.observe(container);
+
+    window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('mousemove', onMouseMove, { passive: true });
     window.addEventListener('touchmove', onTouchMove, { passive: true });
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', onResize);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('touchmove', onTouchMove);
@@ -358,21 +388,10 @@ export const Waves: React.FC<WavesProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`waves ${className}`}
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        margin: 0,
-        padding: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        backgroundColor,
-        ...style,
-      }}
+      className="waves-container pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      style={{ backgroundColor }}
     >
-      <canvas ref={canvasRef} className="waves-canvas" />
+      <canvas ref={canvasRef} className="block w-full h-full" />
     </div>
   );
 };

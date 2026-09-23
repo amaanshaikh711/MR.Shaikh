@@ -39,7 +39,7 @@ export const FEATURED_PROJECTS: Project[] = [
     tags: ['Next.js', 'React', 'TailwindCSS', 'TypeScript', 'Node.js', 'UI/UX'],
     href: 'https://github.com/amaanshaikh711',
     github: 'https://github.com/amaanshaikh711',
-    image: '/assets/project-lussohomes.svg',
+    image: '/assets/lussohomes-luxury.png',
     featured: true,
     role: 'Lead Full-Stack Developer & UI Architect',
     metrics: [
@@ -89,7 +89,7 @@ export const FEATURED_PROJECTS: Project[] = [
     tags: ['Stellar', 'Smart Contracts', 'Web3', 'AI Verification', 'TypeScript', 'TailwindCSS'],
     href: 'https://github.com/amaanshaikh711',
     github: 'https://github.com/amaanshaikh711',
-    image: '/assets/project-trustlock.svg',
+    image: '/assets/project-trustlock.png',
     featured: true,
     role: 'Full-Stack & Web3 Developer',
     metrics: [

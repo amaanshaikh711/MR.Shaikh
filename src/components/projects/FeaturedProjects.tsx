@@ -6,6 +6,7 @@ import { useTheme } from '../../context/ThemeContext';
 import Tabs from '../ui/Tabs';
 import Scene3D from '../three/Scene3D';
 import Badge from '../ui/Badge';
+import ScrollReveal from '../ui/ScrollReveal';
 
 interface FeaturedProjectsProps {
   onSelectProject: (project: Project) => void;
@@ -46,11 +47,13 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
   };
 
   return (
-    <section
+    <ScrollReveal
       id="work"
       className={`relative w-full py-24 transition-colors ${
         isDark ? 'bg-[#060608]' : 'bg-[#f7f7f5]'
       }`}
+      x={36}
+      duration={0.75}
     >
       {/* Section Header */}
       <div className="mx-auto max-w-6xl px-6 md:px-10 mb-12">
@@ -112,11 +115,14 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
           const is3D = viewModes[project.id] === '3d';
 
           return (
-            <article
+            <ScrollReveal
               key={project.id}
               className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center border-t pt-14 transition-colors ${
                 isDark ? 'border-white/[0.08]' : 'border-zinc-200'
               }`}
+              x={index % 2 === 0 ? 26 : -26}
+              duration={0.7}
+              delay={index * 0.08}
             >
               {/* Media column with browser frame & 3D toggle & zero-crop containment */}
               <div
@@ -191,7 +197,9 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
 
                 {/* Viewport Canvas - Zero Crop & High Definition */}
                 <div
-                  className={`relative w-full aspect-[16/10] overflow-hidden rounded-xl border flex items-center justify-center p-2 transition-colors ${
+                  data-cursor="project"
+                  onClick={() => onSelectProject(project)}
+                  className={`relative w-full aspect-[16/10] overflow-hidden rounded-xl border flex items-center justify-center p-2 cursor-pointer transition-colors ${
                     isDark
                       ? 'bg-black/80 border-white/[0.05]'
                       : 'bg-zinc-50 border-zinc-200'
@@ -411,11 +419,11 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
                   </a>
                 </div>
               </div>
-            </article>
+            </ScrollReveal>
           );
         })}
       </div>
-    </section>
+    </ScrollReveal>
   );
 };
 

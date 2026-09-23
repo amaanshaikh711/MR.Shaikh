@@ -21,6 +21,7 @@ export const IdentityParticleSection: React.FC = () => {
 
   return (
     <section
+      id="identity"
       className={`relative w-full border-y py-14 overflow-hidden transition-colors ${
         isDark
           ? 'border-white/[0.08] bg-[#09090f]'

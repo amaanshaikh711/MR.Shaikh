@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 import { EXPERIENCES } from '../../data/portfolioData';
 import { useTheme } from '../../context/ThemeContext';
 import Accordion from '../ui/Accordion';
+import ScrollReveal from '../ui/ScrollReveal';
 
 export const ExperienceTimeline: React.FC = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateProgress = () => {
+      frame = 0;
+      const section = document.getElementById('experience');
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const travel = Math.max(1, rect.height - window.innerHeight * 0.55);
+      const nextProgress = Math.min(1, Math.max(0, (window.innerHeight * 0.3 - rect.top) / travel));
+      setProgress((current) => (Math.abs(current - nextProgress) > 0.002 ? nextProgress : current));
+    };
+
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(updateProgress);
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
 
   const accordionItems = EXPERIENCES.map((item) => ({
     id: item.id,
@@ -51,11 +82,13 @@ export const ExperienceTimeline: React.FC = () => {
   }));
 
   return (
-    <section
+    <ScrollReveal
       id="experience"
       className={`relative w-full py-24 border-t transition-colors ${
         isDark ? 'bg-[#060608] border-white/[0.06]' : 'bg-[#f7f7f5] border-zinc-200'
       }`}
+      x={32}
+      duration={0.75}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         {/* Section Header */}
@@ -91,8 +124,15 @@ export const ExperienceTimeline: React.FC = () => {
             isDark ? 'border-white/15' : 'border-zinc-300'
           }`}
         >
-          {EXPERIENCES.map((item) => (
-            <div key={item.id} className="relative group">
+          <span
+            aria-hidden="true"
+            className={`pointer-events-none absolute -left-px top-0 w-px origin-top transition-[height] duration-150 ease-out ${
+              isDark ? 'bg-purple-400 shadow-[0_0_12px_rgba(168,85,247,0.7)]' : 'bg-indigo-600 shadow-[0_0_10px_rgba(79,70,229,0.35)]'
+            }`}
+            style={{ height: `${progress * 100}%` }}
+          />
+          {EXPERIENCES.map((item, index) => (
+            <ScrollReveal key={item.id} className="relative group" x={index % 2 === 0 ? 28 : -28} duration={0.7} delay={index * 0.07}>
               {/* Timeline Indicator Dot */}
               <div
                 className={`absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 ${
@@ -222,11 +262,11 @@ export const ExperienceTimeline: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
-    </section>
+    </ScrollReveal>
   );
 };
 

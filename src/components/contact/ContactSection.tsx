@@ -294,7 +294,10 @@ export const ContactSection: React.FC = () => {
             isDark ? 'border-white/[0.08] text-zinc-500' : 'border-zinc-200 text-zinc-500'
           }`}
         >
-          <p>© {new Date().getFullYear()} Aman Shaikh. Designed & Built with Precision.</p>
+          <div className="flex items-center gap-2.5">
+            <img src="/as-logo.png" alt="AS" className="h-5 w-5 rounded-full object-cover border border-purple-500/30" />
+            <p>© {new Date().getFullYear()} Aman Shaikh. Designed & Built with Precision.</p>
+          </div>
           <p>AWWWARDS-LEVEL PORTFOLIO · REACT BITS & THREE.JS</p>
         </div>
       </div>
